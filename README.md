@@ -37,7 +37,7 @@ env:
 
 **Note 1:** "env:" must be preceded with exactly 2 spaces, and each variable name must be preceded with exactly 4 spaces.
 
-**Note 2:** The "NRPLANS" environment variable is a JSON array object. In this object you will define your a key: value pair for each New Relic account you wish to provide access to.   The structure is:
+**Note 2:** The "NRPLANS" environment variable is a JSON array object. In this object you will define a key: value pair for each New Relic account you wish to provide access to.   The structure is:
 >
 {"planName" : "the name you want to display", "licenseKey" : "the license key from your New Relic account" } 
 >
