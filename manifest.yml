@@ -1,0 +1,14 @@
+---
+applications:
+- name: new-relic-service-broker
+  memory: 512M
+  instances: 1
+  host: service-broker-${random-word}
+  domain: <YOUR_PCF_DOMAIN>
+  path: new-relic-service-broker.jar
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  env:
+    SECURITY_USER_NAME: <USER_NAME>
+    SECURITY_USER_PASSWORD: <SECRET>
+    NRPLANS: '[{"planName" : "<Plan 1 Name>", "licenseKey" : "<NR License Key for Plan 1>"}, {"planName" : "<Plan 2 Name>", "licenseKey" : "<NR License Key for Plan 2>"}, {"plaName" : "<Plan 3 Name>", "licenseKey" : "<NR License Key for Plan 3>"}, {"planName" : "<Plan 4 Name>", "licenseKey" : "<NR License Key for Plan 4>"}]'
+
