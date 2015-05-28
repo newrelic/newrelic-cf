@@ -1,4 +1,4 @@
-# New Relic Service Broker foro Cloud Foundry
+# New Relic Service Broker for Cloud Foundry
 This repository contains a New Relic Service Broker for Cloud Foundry that allows you to automatically bind New Relic language agents with your applications in Cloud Foundry environments. 
 
 ##Prerequisites
