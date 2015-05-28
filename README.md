@@ -4,10 +4,8 @@ This repository contains a New Relic Service Broker for Cloud Foundry that allow
 ##Prerequisites
 
 *    One or more New Relic accounts/sub-accounts
-*    A New Relic valid license key for each account. 
->
-You can obtain the license key for each account from your New Relic account under 'Account Settings'
->
+*    A New Relic valid license key for each account.  
+ You can obtain the license key for each account from your New Relic account under 'Account Settings'
 *    A running Cloud Foundry environment
 
 
