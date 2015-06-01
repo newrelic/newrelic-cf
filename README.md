@@ -118,12 +118,11 @@ cf restage MY_SAMPLE_APP
 ```
 
 **Additional Note**
-If you would like to add more Services / Accounts after completing this process, it's easy.   
+If you would like to add more Services / Accounts after completing this process, it's easy.  
 Here's how:
-'''
+```
 cf env NRPLANS <JSON_OBJ>
-'''
-where <JSON_OBJ> = the new set of plans with new license keys.   (The old ones will stay in tact).
-
+```
+where <JSON_OBJ> = the new set of plans with new license keys.   (The old ones will stay in tact).  
 Once you've done that, simply restate the service broker and you should be all set.   
 
