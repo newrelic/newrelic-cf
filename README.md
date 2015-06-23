@@ -118,12 +118,11 @@ cf restage MY_SAMPLE_APP
 ```
 
 **Additional Note**
-If you would like to add more Services / Accounts after completing this process, it's easy.  
+If you would like to add more Services / Accounts after completing this process, it's easy.  You'll simply need to add your new plan(s), restage the broker and then enable the access. 
 Here's how:
 ```
-cf env NRPLANS <JSON_OBJ>
+cf env NRPLANS: '[{"planName" : "My-New-Plan", "licenseKey" : "71234567890123456789012345678901234aabbc"}]'
 cf restage MY_SAMPLE_APP
+cf enable-service-access MY_SAMPLE_APP
 ```
-where JSON_OBJ = the new set of plans with new license keys.   (The old ones will stay in tact).  
-   
-
+where JSON_OBJ = the new set of plans with new license keys.     (The old ones will stay in tact).     
