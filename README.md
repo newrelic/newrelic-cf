@@ -123,6 +123,6 @@ Here's how:
 ```
 cf env NRPLANS: '[{"planName" : "My-New-Plan", "licenseKey" : "71234567890123456789012345678901234aabbc"}]'
 cf restage MY_SAMPLE_APP
-cf enable-service-access MY_SAMPLE_APP
+cf enable-service-access <SERVICE>
 ```
 where JSON_OBJ = the new set of plans with new license keys.     (The old ones will stay in tact).     
