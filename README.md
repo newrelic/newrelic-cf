@@ -1,5 +1,5 @@
 # New Relic Service Broker for Cloud Foundry
-This repository contains a New Relic Service Broker for Cloud Foundry that allows you to automatically bind New Relic language agents with your applications in Cloud Foundry environments. 
+This repository contains a New Relic Service Broker for Cloud Foundry that allows you to automatically bind New Relic language agents with your applications in Cloud Foundry environments.
 
 ##Prerequisites
 
@@ -11,8 +11,11 @@ This repository contains a New Relic Service Broker for Cloud Foundry that allow
 
 ##Installation Overview
 
-1.  Download the New Relic Service Broker JAR file and the manifest.yml file
-2.  Edit the manifest.yml file
+1.  Make a new directory
+2.  In that directory, download:
+    * [The latest New Relic Service Broker JAR file](https://github.com/newrelic/newrelic-cf/releases)
+    * [The manifest.yml file from this repository](manifest.yml)
+3.  Edit the manifest.yml file
 3.  Push the Service Broker jar file to Cloud Foundry as an application
 4.  Create a Service Broker
 5.  Enable Access to the Service Broker
@@ -39,14 +42,14 @@ env:
 
 **Note 2:** The "NRPLANS" environment variable is a JSON array object. In this object you will define a key: value pair for each New Relic account you wish to provide access to.   The structure is:
 >
-{"planName" : "the name you want to display", "licenseKey" : "the license key from your New Relic account" } 
+{"planName" : "the name you want to display", "licenseKey" : "the license key from your New Relic account" }
 >
 
 The “planName” is how your developers will know which New Relic account to use for their applications.  
 Name it such that users will know which New Relic account to use.  
 **Note 3.** "planName" cannot contain any spaces (you can use dashes or camelCase to separate words).  
 
-The "licenseKey" value can be found in the "Account Administration" menu option from the top right corner of New Relic. 
+The "licenseKey" value can be found in the "Account Administration" menu option from the top right corner of New Relic.
 Plan names are free form text with no spaces, you can use dashes between words.   
 **Note 4** NRPLANS json array must be defined all in one line.
 
@@ -77,7 +80,7 @@ newrelic-test   New-Relic-Production    none
 
 #####4.  Create a Service Broker    
 ```cf create-service-broker  <SERVICE_BROKER_NAME> <USER> <PASSWORD> <SERVICE_BROKER_URL>```
-    
+
 SERVICE_BROKER_NAME: pick a name for your service broker
 USER: an admin user who has privileges to create service brokers
 PASSWORD: password for the admin user
@@ -118,7 +121,7 @@ cf restage MY_SAMPLE_APP
 ```
 
 **Additional Note**
-If you would like to add more Services / Accounts after completing this process, it's easy.  You'll simply need to add your new plan(s), restage the broker and then enable the access. 
+If you would like to add more Services / Accounts after completing this process, it's easy.  You'll simply need to add your new plan(s), restage the broker and then enable the access.
 Here's how:
 ```
 cf env NRPLANS: '[{"planName" : "My-New-Plan", "licenseKey" : "71234567890123456789012345678901234aabbc"}]'
