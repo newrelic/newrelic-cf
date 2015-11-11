@@ -78,10 +78,10 @@ newrelic-test   New-Relic-Production    none
 #####4.  Create a Service Broker    
 ```cf create-service-broker  <SERVICE_BROKER_NAME> <USER> <PASSWORD> <SERVICE_BROKER_URL>```
     
-SERVICE_BROKER_NAME: pick a name for your service broker
-USER: an admin user who has privileges to create service brokers
-PASSWORD: password for the admin user
-SERVICE_BROKER_URL: the url that was returned as a result of pushing the service broker app    
+* SERVICE_BROKER_NAME: pick a name for your service broker
+* USER: an admin user who has privileges to create service brokers
+* PASSWORD: password for the admin user
+* SERVICE_BROKER_URL: the url that was returned as a result of pushing the service broker app    
 
 
 #####5.  Enable Access to the Service Broker    
@@ -89,7 +89,7 @@ SERVICE_BROKER_URL: the url that was returned as a result of pushing the service
 cf enable-service-access <SERVICE>
 ```    
 
-SERVICE: the service name that was returned from "cf push" (i.e. "newrelic-test")    
+* SERVICE: the service name that was returned from "cf push" (i.e. "newrelic-test")    
 You can also run "cf marketplace" to get the service name This command ensures that access to all plans offered by the service are available for use.
 
 
@@ -99,10 +99,9 @@ Create a service for "each" of the plans (in our example you need to run “cf c
 ```
 cf create-service <SERVICE_BROKER_SERVICE_NAME> <SERVICE_BROKER_PLAN> <SERVICE_INSTANCE>
 ```
-SERVICE_BROKER_SERVICE_NAME: the service name for service broker (i.e. "newrelic-test")
-SERVICE_BROKER_PLAN: plan name offered by the service broker (i.e. "New-Relic-Test")
-
-SERVICE_INSTANCE: descriptive name of the service instance as you wish to set (i.e. "New Relic Account for our Test Environment")
+* SERVICE_BROKER_SERVICE_NAME: the service name for service broker (i.e. "newrelic-test")
+* SERVICE_BROKER_PLAN: plan name offered by the service broker (i.e. "New-Relic-Test")
+* SERVICE_INSTANCE: descriptive name of the service instance as you wish to set (i.e. "New Relic Account for our Test Environment")
 
 Run "cf services" to make sure all your service instances have properly been created
 
@@ -125,4 +124,4 @@ cf env NRPLANS: '[{"planName" : "My-New-Plan", "licenseKey" : "71234567890123456
 cf restage MY_SAMPLE_APP
 cf enable-service-access <SERVICE>
 ```
-where JSON_OBJ = the new set of plans with new license keys.     (The old ones will stay in tact).     
+where JSON_OBJ = the new set of plans with new license keys.     (The old ones will stay intact).     
