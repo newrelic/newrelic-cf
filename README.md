@@ -20,7 +20,8 @@ This repository contains a New Relic Service Broker for Cloud Foundry that allow
 5.  Enable Access to the Service Broker
 6.  Create a Service for each New Relic Account
 7.  Bind the Service to your application
-8.  Re-Stage or re push your application
+8.  (Optional)  Add Proxy configuration
+9.  Re-Stage or re push your application
 
 ##Installation Instructions
 #####1.  Download the 2 files
@@ -112,7 +113,7 @@ Assuming that your applications are already pushed to Cloud Foundry, these servi
 ```
 cf bind-service <APP_NAME> <SERVICE_INSTANCE>
 ```
-#####8.  (Optional)If you are behind a proxy, add the proxy settings to your application
+#####8.  (Optional) If you are behind a proxy, add the proxy settings to your application
 ```
 cf set-env <APP_NAME> JAVA_OPTS "-Dnewrelic.config.proxy_host=proxy.yourCompany.com -Dnewrelic.config.proxy_port=nnn"
 ```
