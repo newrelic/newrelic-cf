@@ -7,6 +7,8 @@ This repository contains a New Relic Service Broker for Cloud Foundry that allow
 *    A New Relic valid license key for each account.  
  You can obtain the license key for each account from your New Relic account under 'Account Settings'
 *    A running Cloud Foundry environment
+*    Proxy host and port details if your PCF environment is behind a firewall
+
 
 
 ##Installation Overview
@@ -110,8 +112,32 @@ Assuming that your applications are already pushed to Cloud Foundry, these servi
 ```
 cf bind-service <APP_NAME> <SERVICE_INSTANCE>
 ```
+#####8.  (Optional)If you are behind a proxy, add the proxy settings to your application
+```
+cf set-env <APP_NAME> JAVA_OPTS "-Dnewrelic.config.proxy_host=proxy.yourCompany.com -Dnewrelic.config.proxy_port=nnn"
+```
+**Note:** If you're using a proxy across all of your applications, you may want to implement a PCF 'Environment Variable Group'.
+```
+$ cf srevg '{"JAVA_OPTS":"-Dnewrelic.config.proxy_host=proxy.yourCompany.com -Dnewrelic.config.proxy_port=nnn"}'
+Setting the contents of the running environment variable group as admin...
+OK
+```
+```
+$ cf revg
+Retrieving the contents of the running environment variable group as admin...
+OK
+Variable Name   Assigned Value
+JAVA_OPTS           -Dnewrelic.config.proxy_host=proxy.yourCompany.com -Dnewrelic.config.proxy_port=nnn
+```
+This will enable you to set the JAVA_OPTS parameters on a more global basis such that all applications would inherit the settings without the need to add application level settings to each application.   You can find more details on that here:
+https://docs.pivotal.io/pivotalcf/devguide/deploy-apps/environment-variable.html#evgroups
 
-#####8.  Re-Stage or re push your application
+
+
+
+
+
+#####9.  Re-Stage or re push your application
 ```
 cf restage MY_SAMPLE_APP
 ```
