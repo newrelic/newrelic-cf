@@ -1,3 +1,5 @@
+[![Archived header](https://github.com/newrelic/open-source-office/raw/master/examples/categories/images/Archived.png)](https://github.com/newrelic/open-source-office/blob/master/examples/categories/index.md#archived)
+
 # New Relic Service Broker for Cloud Foundry
 This repository contains a New Relic Service Broker for Cloud Foundry that allows you to automatically bind New Relic language agents with your applications in Cloud Foundry environments. 
 
